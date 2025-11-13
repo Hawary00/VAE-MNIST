@@ -1,0 +1,26 @@
+# VAE-MNIST Configuration File
+
+dataset:
+  name: "MNIST"
+  data_dir: "./data"
+  batch_size: 126
+  num_workers: 2
+  shuffle: true
+
+model:
+  type: "VAE"     # options: "VAE" or "ConvVAE"
+  latent_dim: 2       # 2 for VAE, for convVAE 32
+
+training:
+  epochs: 20
+  learning_rate: 0.001
+  beta: 1.0            # β coefficient for β-VAE
+  optimizer: "AdamW"
+
+visualization:
+  plot_latent_space: true
+  num_samples: 1
+
+
+paths:
+  results_dir: "results/"
